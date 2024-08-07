@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Page</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .signup-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  .signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  .btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .login-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+</style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form th:method="post" th:action="@{/api/createuser}">
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input name="firstName" type="text" id="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input name="lastName" type="text" id="lastName">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone number</label>
+        <input name="phoneNumber" type="number" id="phoneNumber">
+      </div>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <a th:href="@{login}" class="login-link">Already have an account? Login here</a>
+  </div>
+</body>
+</html>
